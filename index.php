@@ -16,14 +16,7 @@ $indice = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Índice de Aplicaciones en PHP</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        h2 { color: #333; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin: 10px 0; }
-        a { text-decoration: none; color: blue; font-size: 18px; }
-        a:hover { text-decoration: underline; }
-    </style>
+    
 </head>
 <body>
 
