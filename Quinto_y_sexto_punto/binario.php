@@ -40,8 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["numero"]) && $_POST["n
     <?php echo $mensaje; ?>
 </div>
 
-<!-- Botón "Volver" flotante -->
-<a href="index.php" class="volver">Volver</a>
+
 
 </body>
 </html>
