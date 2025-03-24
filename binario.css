@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('fondo-binario.avif') no-repeat center center/cover; /* Imagen de fondo */
+    margin: 0;
+    font-size: 18px; /* Aumenta el tamaño de la letra */
+}
+
+.contenedor {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente para mejor lectura */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h2 {
+    font-size: 26px; /* Letra más grande para el título */
+}
+
+.descripcion {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 12px;
+    width: 90%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px; /* Aumenta el tamaño del input */
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.resultado {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Botón "Volver" flotante */
+.volver {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.volver:hover {
+    background-color: #0056b3;
+}
