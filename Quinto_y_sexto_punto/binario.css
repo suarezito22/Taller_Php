@@ -65,19 +65,21 @@ button:hover {
     font-size: 18px;
 }
 
-/* Botón "Volver" flotante */
-.volver {
+.boton-inicio {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #007bff;
+    top: 20px;  /* Ajusta la distancia desde arriba */
+    left: 20px; /* Ajusta la distancia desde la izquierda */
+    background-color: blue;
     color: white;
-    padding: 12px 18px;
+    text-align: center;
+    padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000; /* Asegura que quede por encima de otros elementos */
 }
 
-.volver:hover {
-    background-color: #0056b3;
+.boton-inicio:hover {
+    background-color: darkblue;
 }
+

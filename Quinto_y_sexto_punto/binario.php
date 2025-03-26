@@ -24,7 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["numero"]) && $_POST["n
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convertir a Binario</title>
-    <link rel="stylesheet" href="binario.css">
+    <a href="../index.php" class="boton-inicio">Volver al Inicio</a>
+    <link rel="stylesheet" href="./binario.css">
 </head>
 <body>
 
