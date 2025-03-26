@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['numeros'])) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <a href="../index.php" class="boton-indice">Ir al índice</a>
     <title>Calculadora Estadística</title> 
 </head>
 <body>
@@ -64,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['numeros'])) {
         <p><strong>Moda:</strong> <?= $moda ?></p>
     <?php endif; ?>
 
-<a href="index.php" class="boton-volver">⬅ Volver al Índice</a>
+
 
 </body>
 </html>

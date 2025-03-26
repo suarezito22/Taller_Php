@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['conjuntoA']) && !emp
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="../index.php" class="boton-indice">Ir al índice</a>
     <title>Operaciones de conjuntos</title>
 </head>
 <body>
@@ -60,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['conjuntoA']) && !emp
         <p><strong>Diferencia A - B:</strong> <?= implode(', ', $diferenciaAB) ?></p>
         <p><strong>Diferencia B - A:</strong> <?= implode(', ', $diferenciaBA) ?></p>
     <?php endif; ?>
+    
 
 
 </body>
