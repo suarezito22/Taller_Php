@@ -1,30 +1,37 @@
-
 <?php
 class Estadisticas {
     private $numeros;
 
     public function __construct($numeros) {
-        $this->numeros = array_map('floatval', $numeros);
+        // Limpia espacios y convierte a flotantes
+        $this->numeros = array_filter(array_map('floatval', array_map('trim', $numeros)), 'is_numeric');
     }
 
     public function calcularPromedio() {
-        return array_sum($this->numeros) / count($this->numeros);
+        return count($this->numeros) > 0 ? array_sum($this->numeros) / count($this->numeros) : 0;
     }
 
     public function calcularMediana() {
-        sort($this->numeros);
         $count = count($this->numeros);
+        if ($count === 0) return 0;
+
+        sort($this->numeros);
         $middle = floor($count / 2);
 
-        if ($count % 2) {
-            return $this->numeros[$middle];
-        } else {
-            return ($this->numeros[$middle - 1] + $this->numeros[$middle]) / 2;
-        }
+        return ($count % 2) ? $this->numeros[$middle] 
+                            : ($this->numeros[$middle - 1] + $this->numeros[$middle]) / 2;
     }
+
     public function calcularModa() {
-        $frecuencias = array_count_values($this->numeros);
+        if (empty($this->numeros)) return "No hay datos";
+
+        // Convertimos los valores a string para que `array_count_values()` los procese correctamente
+        $numerosEnteros = array_map(fn($n) => (string) round($n, 2), $this->numeros);
+        $frecuencias = array_count_values($numerosEnteros);
         $maxFrecuencia = max($frecuencias);
+
+        if ($maxFrecuencia === 1) return "No hay moda"; // Si todos aparecen una sola vez, no hay moda
+
         $moda = array_keys($frecuencias, $maxFrecuencia);
         return implode(', ', $moda);
     }
@@ -38,10 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['numeros'])) {
     $moda = $estadisticas->calcularModa();
 }
 ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -64,8 +67,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['numeros'])) {
         <p><strong>Mediana:</strong> <?= number_format($mediana, 2) ?></p>
         <p><strong>Moda:</strong> <?= $moda ?></p>
     <?php endif; ?>
-
-
-
 </body>
 </html>
